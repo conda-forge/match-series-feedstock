@@ -42,11 +42,6 @@ mv ${PREFIX}/bin/tools/image/manipulator/deformQuoc2D ${PREFIX}/bin
 mv ${PREFIX}/bin/tools/image/manipulator/swapCoordinates ${PREFIX}/bin
 mv ${PREFIX}/bin/projects/electronMicroscopy/matchSeries ${PREFIX}/bin
 mv ${PREFIX}/bin/projects/electronMicroscopy/matchSeismicSeries ${PREFIX}/bin
-mv ${PREFIX}/bin/selfTest/quoc/sparsetest ${PREFIX}/bin
-mv ${PREFIX}/bin/selfTest/quoc/selfTest ${PREFIX}/bin
-mv ${PREFIX}/bin/selfTest/quoc/simplexSelfTest ${PREFIX}/bin
-mv ${PREFIX}/bin/selfTest/aol/selfTest ${PREFIX}/bin
-mv ${PREFIX}/bin/selfTest/aol/exceptionTest ${PREFIX}/bin
 
 rm -rf ${PREFIX}/bin/tools
 rm -rf ${PREFIX}/bin/projects
