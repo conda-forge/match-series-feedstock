@@ -31,3 +31,18 @@ cmake -G"Unix Makefiles" \
 make -j${CPU_COUNT}
 make test
 make install
+
+mv ${PREFIX}/bin/tools/image/converter/convertTIFFToQuoc ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/converter/convertDM3ToQuoc ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/converter/convertSERToQuoc ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/converter/convert2DPGMTo8Bit ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/converter/convertQuocToTIFF ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/manipulator/multShiftImg ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/manipulator/deformQuoc2D ${PREFIX}/bin
+mv ${PREFIX}/bin/tools/image/manipulator/swapCoordinates ${PREFIX}/bin
+mv ${PREFIX}/bin/projects/electronMicroscopy/matchSeries ${PREFIX}/bin
+mv ${PREFIX}/bin/projects/electronMicroscopy/matchSeismicSeries ${PREFIX}/bin
+
+rm -rf ${PREFIX}/bin/tools
+rm -rf ${PREFIX}/bin/projects
+rm -rf ${PREFIX}/bin/selfTest

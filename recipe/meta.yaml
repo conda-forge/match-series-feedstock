@@ -10,7 +10,7 @@ source:
   sha256: 9e74ca6bc58571065f30f99307f8912009fa6b62be10f24d3f5ddc5b2361ce48
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not linux]
 
 requirements:
@@ -30,7 +30,7 @@ requirements:
 
 test:
   commands:
-    - ${PREFIX}/bin/projects/electronMicroscopy/matchSeries --help
+    - matchSeries --help
 
 about:
   home: https://github.com/berkels/match-series
