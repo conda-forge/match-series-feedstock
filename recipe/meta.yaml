@@ -30,7 +30,7 @@ requirements:
 
 test:
   commands:
-    - ${PREFIX}/bin/matchSeries --help
+    - matchSeries --help
 
 about:
   home: https://github.com/berkels/match-series
