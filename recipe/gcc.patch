@@ -1,0 +1,42 @@
+From 108cb298f50f08407e46b6002ad8d85aebc0b77e Mon Sep 17 00:00:00 2001
+From: Jan Janssen <jan-janssen@users.noreply.github.com>
+Date: Thu, 25 Jun 2020 12:15:42 +0200
+Subject: [PATCH] Remove GCC overwrite
+
+---
+ quocmesh/CMakeLists.txt | 22 ----------------------
+ 1 file changed, 22 deletions(-)
+
+diff --git a/quocmesh/CMakeLists.txt b/quocmesh/CMakeLists.txt
+index 8083904..308855a 100644
+--- a/quocmesh/CMakeLists.txt
++++ b/quocmesh/CMakeLists.txt
+@@ -155,28 +155,6 @@ IF ( CMAKE_COMPILER_IS_GNUCXX )
+     SET ( SYSTEM_LIBRARIES ${SYSTEM_LIBRARIES} -ldl )
+   ENDIF ( )
+ 
+-  # Support for "march=native" was introduced in GCC version 4.2.0.
+-  # The GCC 4.2.1 version that comes with OS X doesn't seem to support this.
+-  # Newer GCC versions do support this under OS X if clang is used as assembler, but this leads to strange problems.
+-  # For instance, the tpcfe selfTest fails, so don't use this as default there.
+-  IF ( NOT ( ${QUOC_GCC_VERSION} VERSION_LESS 4.2 ) AND ( NOT APPLE ) )
+-    #! \cmakeoption{gcc -march flag,native for gcc version 4.2 or greater}
+-    SET ( GCC_SYSTEM_TYPE "native" CACHE STRING "select system type for gcc -march=xxx" )
+-  ELSE ( )
+-    SET ( GCC_SYSTEM_TYPE "" CACHE STRING "select system type for gcc -march=xxx" )
+-  ENDIF ( )
+-
+-  IF ( NOT ( GCC_SYSTEM_TYPE STREQUAL "" ) )
+-    # To use "march=native" with a CPU that supports AVX under OS X, clang has to be used as assembler.
+-    # The GNU assembler for OS X is too old to support these extensions.
+-    IF ( APPLE AND ( GCC_SYSTEM_TYPE STREQUAL "native" ) )
+-      SET ( CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -Wa,-q" )
+-      SET ( CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -Wa,-q" )
+-    ENDIF ( )
+-    SET ( CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -march=${GCC_SYSTEM_TYPE}" )
+-    SET ( CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -march=${GCC_SYSTEM_TYPE}" )
+-  ENDIF ( )
+-
+   # MinGW GCC 4.6.1 warns about some things that are obviously correct, so turn off the corresponding warning.
+   # The same is true for GCC 4.6.3 under Ubuntu, so we turn if off for GCC 4.6.0 to 4.6.3.
+   IF ( ( NOT ( ${QUOC_GCC_VERSION} VERSION_LESS 4.6 ) ) AND ( ${QUOC_GCC_VERSION} VERSION_LESS 4.6.4 ) )
