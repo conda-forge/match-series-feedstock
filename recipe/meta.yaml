@@ -11,13 +11,13 @@ source:
 
 build:
   number: 6
-  skip: true  # [not linux]
+  skip: true  # [osx]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - make
+    - make  # [linux]
   host:
     - libblas
     - fftw
