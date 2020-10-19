@@ -21,7 +21,7 @@ requirements:
     - make  # [linux]
   host:
     - libblas  # [linux]
-    - fftw  # [linux]
+    - fftw
     - libpng
     - zlib
     - bzip2  # [linux]

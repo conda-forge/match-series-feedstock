@@ -22,7 +22,7 @@ cmake -G"NMake Makefiles" ^
       -DUSE_SUITESPARSE=0 ^
       -DUSE_FOX=0 ^
       -DBUILD_FOX=0 ^
-      -DUSE_FFTW=0 ^
+      -DUSE_FFTW=1 ^
       -DBUILD_ZLIB_AND_LIBPNG=0 ^
       -DUSE_BOOST=0 ^
       -DUSE_C++11=0 ^
