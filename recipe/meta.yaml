@@ -1,17 +1,16 @@
 {% set name = "match-series" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz
-  url: https://github.com/berkels/match-series/archive/master.zip
+  url: https://github.com/berkels/{{ name }}/archive/{{ version }}.tar.gz
   sha256: 5c09e8896547815fd5e9496d218667327a1943f720817dbf161a9c220c87a472
 
 build:
-  number: 6
+  number: 0
   skip: true  # [osx]
 
 requirements:
