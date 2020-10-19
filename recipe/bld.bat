@@ -9,7 +9,7 @@ cmake -G"NMake Makefiles" ^
       -DUSE_PNG=1 ^
       -DPARSE_GCC_ERRORS=0 ^
       -DUSE_OPENMP=0 ^
-      -DDYNAMIC_LINKING=1 ^
+      -DDYNAMIC_LINKING=0 ^
       -DUSE_PROFILING=0 ^
       -DUSE_SSE=1 ^
       -DUSE_BLAS=1 ^
@@ -25,7 +25,7 @@ cmake -G"NMake Makefiles" ^
       -DUSE_FFTW=1 ^
       -DBUILD_ZLIB_AND_LIBPNG=1 ^
       -DUSE_BOOST=0 ^
-      -DUSE_C++11=1 ^
+      -DUSE_C++11=0 ^
       -DGENERATE_INCLUDE_TEST=0 ^
       -DUSE_TIFF=1 ^
       -DUSE_CIMG=0 ^
@@ -41,16 +41,16 @@ if errorlevel 1 exit 1
 nmake install
 if errorlevel 1 exit 1
 
-copy %PREFIX%\bin\tools\image\converter\convertTIFFToQuoc %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\converter\convertDM3ToQuoc %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\converter\convertSERToQuoc %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\converter\convert2DPGMTo8Bit %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\converter\convertQuocToTIFF %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\manipulator\multShiftImg %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\manipulator\deformQuoc2D %PREFIX%\bin
-copy %PREFIX%\bin\tools\image\manipulator\swapCoordinates %PREFIX%\bin
-copy %PREFIX%\bin\projects\electronMicroscopy\matchSeries %PREFIX%\bin
-copy %PREFIX%\bin\projects\electronMicroscopy\matchSeismicSeries %PREFIX%\bin
+copy %PREFIX%\bin\tools\image\converter\convertTIFFToQuoc.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\converter\convertDM3ToQuoc.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\converter\convertSERToQuoc.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\converter\convert2DPGMTo8Bit.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\converter\convertQuocToTIFF.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\manipulator\multShiftImg.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\manipulator\deformQuoc2D.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\tools\image\manipulator\swapCoordinates.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\projects\electronMicroscopy\matchSeries.exe %PREFIX%\Library\bin
+copy %PREFIX%\bin\projects\electronMicroscopy\matchSeismicSeries.exe %PREFIX%\Library\bin
 
 rmdir /s/q %PREFIX%\bin\tools
 rmdir /s/q %PREFIX%\bin\projects

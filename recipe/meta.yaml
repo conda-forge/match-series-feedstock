@@ -22,7 +22,7 @@ requirements:
   host:
     - libblas
     - fftw
-    - libpng
+    - libpng  # [linux]
     - zlib
     - bzip2
     - libtiff
