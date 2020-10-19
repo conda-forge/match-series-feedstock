@@ -22,8 +22,8 @@ requirements:
   host:
     - libblas  # [linux]
     - fftw  # [linux]
-    - libpng  # [linux]
-    - zlib  # [linux]
+    - libpng
+    - zlib
     - bzip2  # [linux]
     - libtiff
     - suitesparse  # [linux]
