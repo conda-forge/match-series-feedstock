@@ -24,7 +24,7 @@ requirements:
     - fftw  # [linux]
     - libpng  # [linux]
     - zlib  # [linux]
-    - bzip2
+    - bzip2  # [linux]
     - libtiff
     - suitesparse  # [linux]
   run:
