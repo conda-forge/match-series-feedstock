@@ -1,6 +1,6 @@
 mkdir %build% && cd %build%
 
-cmake -G"MinGW Makefiles" ^
+cmake -G"NMake Makefiles" ^
       -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
       -DCMAKE_CXX_FLAGS=%CXXFLAGS% ^
       -DCMAKE_C_FLAGS=%CFLAGS% ^
