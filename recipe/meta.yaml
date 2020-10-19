@@ -20,13 +20,13 @@ requirements:
     - cmake
     - make  # [linux]
   host:
-    - libblas
-    - fftw
+    - libblas  # [linux]
+    - fftw  # [linux]
     - libpng  # [linux]
-    - zlib
+    - zlib  # [linux]
     - bzip2
     - libtiff
-    - suitesparse
+    - suitesparse  # [linux]
   run:
 
 test:

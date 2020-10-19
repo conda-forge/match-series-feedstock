@@ -11,9 +11,9 @@ cmake -G"NMake Makefiles" ^
       -DUSE_OPENMP=0 ^
       -DDYNAMIC_LINKING=0 ^
       -DUSE_PROFILING=0 ^
-      -DUSE_SSE=1 ^
-      -DUSE_BLAS=1 ^
-      -DUSE_LAPACK=1 ^
+      -DUSE_SSE=0 ^
+      -DUSE_BLAS=0 ^
+      -DUSE_LAPACK=0 ^
       -DUSE_DOXYGEN=0 ^
       -DUSE_QT=0 ^
       -DUSE_CUDA=0 ^
@@ -22,8 +22,8 @@ cmake -G"NMake Makefiles" ^
       -DUSE_SUITESPARSE=0 ^
       -DUSE_FOX=0 ^
       -DBUILD_FOX=0 ^
-      -DUSE_FFTW=1 ^
-      -DBUILD_ZLIB_AND_LIBPNG=1 ^
+      -DUSE_FFTW=0 ^
+      -DBUILD_ZLIB_AND_LIBPNG=0 ^
       -DUSE_BOOST=0 ^
       -DUSE_C++11=0 ^
       -DGENERATE_INCLUDE_TEST=0 ^
