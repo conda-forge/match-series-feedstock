@@ -12,8 +12,8 @@ cmake -G"NMake Makefiles" ^
       -DDYNAMIC_LINKING=0 ^
       -DUSE_PROFILING=0 ^
       -DUSE_SSE=0 ^
-      -DUSE_BLAS=0 ^
-      -DUSE_LAPACK=0 ^
+      -DUSE_BLAS=1 ^
+      -DUSE_LAPACK=1 ^
       -DUSE_DOXYGEN=0 ^
       -DUSE_QT=0 ^
       -DUSE_CUDA=0 ^

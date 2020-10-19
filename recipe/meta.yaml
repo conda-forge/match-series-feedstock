@@ -20,7 +20,8 @@ requirements:
     - cmake
     - make  # [linux]
   host:
-    - libblas  # [linux]
+    - libblas
+    - liblapack
     - fftw
     - libpng
     - zlib
@@ -37,6 +38,7 @@ test:
     - testImg_2_STEM.tif
     - testImg_3_STEM.tif
   commands:
+    - set QUOC_NO_SYSTEM_PAUSE=ON  # [win]
     - matchSeries
 
 about:
