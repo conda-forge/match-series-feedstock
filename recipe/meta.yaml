@@ -1,5 +1,5 @@
 {% set name = "match-series" %}
-{% set version = "1.0.1" %}
+{% set version = "1.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -8,11 +8,9 @@ package:
 source:
   url: https://github.com/berkels/{{ name }}/archive/{{ version }}.tar.gz
   sha256: fe4b203127c6b3c7892815f37d7e134830d6b97312e8b481cca3e5cfc834e0c4
-  patches:
-    - quocmesh.patch
 
 build:
-  number: 1
+  number: 0
 
 requirements:
   build:
