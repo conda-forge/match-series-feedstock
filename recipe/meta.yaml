@@ -11,22 +11,21 @@ source:
 
 build:
   number: 0
-  skip: true  # [osx]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - make  # [linux]
+    - make  # [not win]
   host:
     - libblas
     - liblapack
     - fftw
     - libpng
     - zlib
-    - bzip2  # [linux]
+    - bzip2  # [not win]
     - libtiff
-    - suitesparse  # [linux]
+    - suitesparse  # [not win]
   run:
 
 test:
