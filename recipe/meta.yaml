@@ -11,21 +11,22 @@ source:
 
 build:
   number: 0
-  skip: true  # [not linux]
+  skip: true  # [osx]
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
-    - make
+    - make  # [linux]
   host:
     - libblas
+    - liblapack
     - fftw
     - libpng
     - zlib
-    - bzip2
+    - bzip2  # [linux]
     - libtiff
-    - suitesparse
+    - suitesparse  # [linux]
   run:
 
 test:
@@ -36,6 +37,7 @@ test:
     - testImg_2_STEM.tif
     - testImg_3_STEM.tif
   commands:
+    - set QUOC_NO_SYSTEM_PAUSE=ON  # [win]
     - matchSeries
 
 about:
