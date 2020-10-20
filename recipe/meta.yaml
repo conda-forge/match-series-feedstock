@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: fe4b203127c6b3c7892815f37d7e134830d6b97312e8b481cca3e5cfc834e0c4
+  sha256: c34a37e044eee0d74090ef58113bed7d50a420d432cfcd9e24a767971da37f31
 
 build:
   number: 0
