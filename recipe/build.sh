@@ -1,5 +1,5 @@
 #!/bin/bash
-cmake -G"Xcode" \
+cmake -G"Unix Makefiles" \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DCMAKE_CXX_FLAGS=${CXXFLAGS} \
       -DCMAKE_C_FLAGS=${CFLAGS} \
