@@ -6,13 +6,13 @@ package:
   version: {{ version }}
 
 source:
-  # url: https://github.com/berkels/{{ name }}/archive/{{ version }}.tar.gz
-  # sha256: fe4b203127c6b3c7892815f37d7e134830d6b97312e8b481cca3e5cfc834e0c4
-  url: https://github.com/berkels/match-series/archive/master.zip
-  sha256: 989e42dac094bcd6098bf1ad974cc55043264d2b1ac38572b3972ebbf5651191
+  url: https://github.com/berkels/{{ name }}/archive/{{ version }}.tar.gz
+  sha256: fe4b203127c6b3c7892815f37d7e134830d6b97312e8b481cca3e5cfc834e0c4
+  patches:
+    - quocmesh.patch
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
