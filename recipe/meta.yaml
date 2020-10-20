@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/berkels/{{ name }}/archive/{{ version }}.tar.gz
+  url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: fe4b203127c6b3c7892815f37d7e134830d6b97312e8b481cca3e5cfc834e0c4
 
 build:
