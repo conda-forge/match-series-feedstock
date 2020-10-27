@@ -1,5 +1,5 @@
 {% set name = "match-series" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: c34a37e044eee0d74090ef58113bed7d50a420d432cfcd9e24a767971da37f31
+  sha256: b85b727ff415a8dd052c17ebb8bab56991a98c326c09d8e85f8abec7c17a4ae7
 
 build:
   number: 0
