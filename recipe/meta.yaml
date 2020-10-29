@@ -8,9 +8,11 @@ package:
 source:
   url: https://github.com/berkels/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: ae2c867cc721e0dccc0be2e57d03251f26a084ea522eb456efe39994dee0f0ad
+  patches:
+    - quocmesh.patch 
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -25,7 +27,8 @@ requirements:
     - zlib
     - bzip2  # [not win]
     - libtiff
-    - suitesparse  # [not win]
+    - suitesparse
+    - metis  # [win]
   run:
 
 test:

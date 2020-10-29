@@ -1,0 +1,76 @@
+diff --git a/quocmesh/CMakeLists.txt b/quocmesh/CMakeLists.txt
+index 6d3ec6c..338e058 100644
+--- a/quocmesh/CMakeLists.txt
++++ b/quocmesh/CMakeLists.txt
+@@ -1003,34 +1003,19 @@ ENDIF ( )
+ #! \cmakeoption{Use SuiteSparse,ON}
+ OPTION ( USE_SUITESPARSE "" OFF )
+ IF ( USE_SUITESPARSE AND BLAS_FOUND AND LAPACK_FOUND )
+-  IF ( NOT WIN32 )
+-    FIND_PACKAGE ( SUITESPARSE )
+-    IF ( SUITESPARSE_FOUND OR SuiteSparse_FOUND )
+-      IF ( SUITESPARSE_FOUND )
+-        INCLUDE_DIRECTORIES ( ${SUITESPARSE_INCLUDE_DIRS} )
+-        LINK_DIRECTORIES ( ${SUITESPARSE_LIBRARY_DIR} )
+-        SET ( SYSTEM_LIBRARIES ${SYSTEM_LIBRARIES} ${SUITESPARSE_LIBRARIES} ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} )
+-      ELSE ( )
+-        INCLUDE_DIRECTORIES ( ${SuiteSparse_INCLUDE_DIRS} )
+-        SET ( SYSTEM_LIBRARIES ${SYSTEM_LIBRARIES} ${SuiteSparse_LIBRARIES} )
+-      ENDIF ( )
+-      ADD_COMPILE_DEFINITIONS ( USE_EXTERNAL_SUITESPARSE )
++  FIND_PACKAGE ( SUITESPARSE )
++  IF ( SUITESPARSE_FOUND OR SuiteSparse_FOUND )
++    IF ( SUITESPARSE_FOUND )
++      INCLUDE_DIRECTORIES ( ${SUITESPARSE_INCLUDE_DIRS} )
++      LINK_DIRECTORIES ( ${SUITESPARSE_LIBRARY_DIR} )
++      SET ( SYSTEM_LIBRARIES ${SYSTEM_LIBRARIES} ${SUITESPARSE_LIBRARIES} ${LAPACK_LIBRARIES} ${BLAS_LIBRARIES} )
+     ELSE ( )
+-      MESSAGE ( FATAL_ERROR "Could NOT find SUITESPARSE" )
++      INCLUDE_DIRECTORIES ( ${SuiteSparse_INCLUDE_DIRS} )
++      SET ( SYSTEM_LIBRARIES ${SYSTEM_LIBRARIES} ${SuiteSparse_LIBRARIES} )
+     ENDIF ( )
++    ADD_COMPILE_DEFINITIONS ( USE_EXTERNAL_SUITESPARSE )
+   ELSE ( )
+-    # This block links SuiteSparse on Windows
+-    # Download from: https://github.com/jlblancoc/suitesparse-metis-for-windows
+-    # Build with MinGW or MSVC and set SuiteSparse_DIR to the install directory
+-    SET ( SuiteSparse_USE_LAPACK_BLAS ON )
+-    FIND_PACKAGE ( SuiteSparse NO_MODULE )
+-    IF ( SuiteSparse_FOUND )
+-      INCLUDE ( ${USE_SuiteSparse} )
+-	  SET ( SYSTEM_LIBRARIES ${SYSTEM_LIBRARIES} ${SuiteSparse_LIBRARIES} ) # blas and lapack should be included with SuiteSparseWindows
+-	ADD_COMPILE_DEFINITIONS ( USE_EXTERNAL_SUITESPARSE )
+-      ELSE ( )
+-        MESSAGE ( STATUS "Could NOT find SUITESPARSE (hint: did you forget to specify SuiteSparse_DIR?)")
+-      ENDIF ( )
++    MESSAGE ( FATAL_ERROR "Could NOT find SUITESPARSE" )
+   ENDIF ( )
+ ELSE ( )
+   IF ( USE_SUITESPARSE AND ( NOT BLAS_FOUND ) )
+diff --git a/quocmesh/cmake/FindSUITESPARSE.cmake b/quocmesh/cmake/FindSUITESPARSE.cmake
+index 4397b50..0fa99aa 100644
+--- a/quocmesh/cmake/FindSUITESPARSE.cmake
++++ b/quocmesh/cmake/FindSUITESPARSE.cmake
+@@ -56,7 +56,7 @@ IF( WIN32 )
+   # Find cholmod part of the suitesparse library collection
+ 
+   FIND_PATH( CHOLMOD_INCLUDE_DIR cholmod.h
+-             PATHS "C:\\libs\\win32\\SuiteSparse\\Include"  )
++             PATHS "C:\\libs\\win32\\SuiteSparse\\Include" "$ENV{CONDA_PREFIX}/../_h_env/Library/include/suitesparse" )
+ 
+   # Add cholmod include directory to collection include directories
+   IF ( CHOLMOD_INCLUDE_DIR )
+@@ -67,11 +67,11 @@ IF( WIN32 )
+   # find path suitesparse library
+   FIND_PATH( SUITESPARSE_LIBRARY_DIRS 
+              amd.lib
+-             PATHS "C:\\libs\\win32\\SuiteSparse\\libs" )
++             PATHS "C:\\libs\\win32\\SuiteSparse\\libs" "$ENV{CONDA_PREFIX}/../_h_env/Library/lib/" )
+ 
+   # if we found the library, add it to the defined libraries
+   IF ( SUITESPARSE_LIBRARY_DIRS )
+-       LIST ( APPEND SUITESPARSE_LIBRARIES optimized;amd;optimized;camd;optimized;ccolamd;optimized;cholmod;optimized;colamd;optimized;metis;optimized;spqr;optimized;umfpack;debug;amdd;debug;camdd;debug;ccolamdd;debug;cholmodd;debug;spqrd;debug;umfpackd;debug;colamdd;debug;metisd;optimized;blas;optimized;libf2c;optimized;lapack;debug;blasd;debug;libf2cd;debug;lapackd )
++       LIST ( APPEND SUITESPARSE_LIBRARIES optimized;amd;optimized;camd;optimized;ccolamd;optimized;cholmod;optimized;colamd;optimized;metis;optimized;spqr;optimized;umfpack;debug;amdd;debug;camdd;debug;ccolamdd;debug;cholmodd;debug;spqrd;debug;umfpackd;debug;colamdd;debug;metisd;optimized;blas;optimized;lapack;debug;blasd;debug;lapackd )
+   ENDIF( SUITESPARSE_LIBRARY_DIRS )  
+ 
+ ELSE( WIN32 )

@@ -19,7 +19,7 @@ cmake -G"NMake Makefiles" ^
       -DUSE_CUDA=0 ^
       -DUSE_OPENMESH=0 ^
       -DUSE_VTK=0 ^
-      -DUSE_SUITESPARSE=0 ^
+      -DUSE_SUITESPARSE=1 ^
       -DUSE_FOX=0 ^
       -DBUILD_FOX=0 ^
       -DUSE_FFTW=1 ^
@@ -36,6 +36,9 @@ cmake -G"NMake Makefiles" ^
 if errorlevel 1 exit 1
 
 nmake
+if errorlevel 1 exit 1
+
+nmake test
 if errorlevel 1 exit 1
 
 nmake install
