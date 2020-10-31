@@ -15,7 +15,7 @@ libpng:
 libtiff:
 - 4.1.0
 metis:
-- 5.1.0
+- '5.1'
 pin_run_as_build:
   fftw:
     max_pin: x
@@ -23,6 +23,8 @@ pin_run_as_build:
     max_pin: x.x
   libtiff:
     max_pin: x
+  metis:
+    max_pin: x.x
   zlib:
     max_pin: x.x
 suitesparse:

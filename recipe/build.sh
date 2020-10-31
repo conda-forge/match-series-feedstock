@@ -19,15 +19,12 @@ cmake -G"Unix Makefiles" \
       -DUSE_OPENMESH=0 \
       -DUSE_VTK=0 \
       -DUSE_SUITESPARSE=1 \
-      -DUSE_FOX=0 \
-      -DBUILD_FOX=0 \
       -DUSE_FFTW=1 \
       -DUSE_GRAPE=0 \
       -DUSE_C++11=1 \
       -DGENERATE_INCLUDE_TEST=0 \
       -DUSE_TIFF=1 \
       -DUSE_CIMG=0 \
-      -DTEST_OPENSOURCE_SELECTION=0 \
       -DUSE_OPENGL=0 \
       -DUSE_METIS=0 \
       quocmesh
