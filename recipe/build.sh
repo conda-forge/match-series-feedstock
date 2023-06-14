@@ -1,8 +1,8 @@
 #!/bin/bash
 cmake -G"Unix Makefiles" \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-      -DCMAKE_CXX_FLAGS=${CXXFLAGS} \
-      -DCMAKE_C_FLAGS=${CFLAGS} \
+      -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
+      -DCMAKE_C_FLAGS="${CFLAGS}" \
       -DGCC_SYSTEM_TYPE="" \
       -DCMAKE_BUILD_TYPE=Release \
       -DUSE_PNG=1 \
