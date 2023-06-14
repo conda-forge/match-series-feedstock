@@ -29,7 +29,7 @@ cmake -G"Unix Makefiles" \
       -DUSE_METIS=0 \
       quocmesh
 make -j${CPU_COUNT}
-make test
+env CTEST_OUTPUT_ON_FAILURE=1 make test
 make install
 
 mv ${PREFIX}/bin/tools/image/converter/convertTIFFToQuoc ${PREFIX}/bin
