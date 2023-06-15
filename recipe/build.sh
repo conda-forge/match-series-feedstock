@@ -1,4 +1,5 @@
 #!/bin/bash
+export CMAKE_PREFIX_PATH=${PREFIX}
 cmake -G"Unix Makefiles" \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
