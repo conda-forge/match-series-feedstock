@@ -30,6 +30,7 @@ requirements:
     - suitesparse
     - metis  # [win]
   run:
+    - libpng
 
 test:
   files:
