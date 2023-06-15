@@ -1,6 +1,5 @@
 #!/bin/bash
-export CMAKE_PREFIX_PATH=${CONDA_PREFIX}
-cmake -G"Unix Makefiles" \
+cmake -G "$CMAKE_GENERATOR" \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
       -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
       -DCMAKE_C_FLAGS="${CFLAGS}" \
