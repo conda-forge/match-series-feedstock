@@ -1,8 +1,9 @@
 #!/bin/bash
-cmake -G"Unix Makefiles" \
+cmake -G "$CMAKE_GENERATOR" \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
-      -DCMAKE_CXX_FLAGS=${CXXFLAGS} \
-      -DCMAKE_C_FLAGS=${CFLAGS} \
+      -DCMAKE_FIND_FRAMEWORK=LAST \
+      -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
+      -DCMAKE_C_FLAGS="${CFLAGS}" \
       -DGCC_SYSTEM_TYPE="" \
       -DCMAKE_BUILD_TYPE=Release \
       -DUSE_PNG=1 \
@@ -29,7 +30,7 @@ cmake -G"Unix Makefiles" \
       -DUSE_METIS=0 \
       quocmesh
 make -j${CPU_COUNT}
-make test
+env CTEST_OUTPUT_ON_FAILURE=1 make test
 make install
 
 mv ${PREFIX}/bin/tools/image/converter/convertTIFFToQuoc ${PREFIX}/bin

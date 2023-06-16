@@ -12,13 +12,14 @@ source:
     - quocmesh.patch 
 
 build:
-  number: 2
+  number: 3
 
 requirements:
   build:
     - {{ compiler('cxx') }}
     - cmake
     - make  # [not win]
+    - pkg-config  # [osx]
   host:
     - libblas
     - liblapack
@@ -30,6 +31,7 @@ requirements:
     - suitesparse
     - metis  # [win]
   run:
+    - libpng
 
 test:
   files:

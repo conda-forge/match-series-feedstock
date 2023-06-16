@@ -1,34 +1,23 @@
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2017
+- vs2019
 fftw:
 - '3'
 libblas:
-- 3.8 *netlib
+- 3.9 *netlib
 liblapack:
-- 3.8 *netlib
+- 3.9 *netlib
 libpng:
 - '1.6'
 libtiff:
-- 4.1.0
+- '4.5'
 metis:
 - '5.1'
-pin_run_as_build:
-  fftw:
-    max_pin: x
-  libpng:
-    max_pin: x.x
-  libtiff:
-    max_pin: x
-  metis:
-    max_pin: x.x
-  zlib:
-    max_pin: x.x
 suitesparse:
-- '5.4'
+- '5'
 target_platform:
 - win-64
 zlib:
