@@ -1,6 +1,7 @@
 #!/bin/bash
 cmake -G "$CMAKE_GENERATOR" \
       -DCMAKE_INSTALL_PREFIX=${PREFIX} \
+      -DCMAKE_FIND_FRAMEWORK=LAST \
       -DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
       -DCMAKE_C_FLAGS="${CFLAGS}" \
       -DGCC_SYSTEM_TYPE="" \
