@@ -15,7 +15,7 @@ libpng:
 libtiff:
 - '4.5'
 metis:
-- '5.1'
+- 5.1.1
 suitesparse:
 - '5'
 target_platform:
