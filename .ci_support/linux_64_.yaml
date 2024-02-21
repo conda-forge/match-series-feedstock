@@ -21,7 +21,7 @@ liblapack:
 libpng:
 - '1.6'
 libtiff:
-- '4.5'
+- '4.6'
 suitesparse:
 - '5'
 target_platform:
