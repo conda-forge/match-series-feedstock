@@ -12,7 +12,7 @@ source:
     - quocmesh.patch 
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
@@ -26,7 +26,7 @@ requirements:
     - fftw
     - libpng
     - zlib
-    - bzip2  # [not win]
+    - bzip2
     - libtiff
     - suitesparse
     - metis  # [win]
