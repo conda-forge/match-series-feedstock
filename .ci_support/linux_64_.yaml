@@ -27,7 +27,7 @@ libpng:
 libtiff:
 - '4.6'
 suitesparse:
-- '5'
+- '7'
 target_platform:
 - linux-64
 zip_keys:
