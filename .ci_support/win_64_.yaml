@@ -17,7 +17,7 @@ libtiff:
 metis:
 - 5.1.0
 suitesparse:
-- '7'
+- '5'
 target_platform:
 - win-64
 zlib:

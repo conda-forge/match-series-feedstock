@@ -23,7 +23,7 @@ libpng:
 libtiff:
 - '4.6'
 suitesparse:
-- '7'
+- '5'
 target_platform:
 - linux-64
 zlib:
