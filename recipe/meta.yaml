@@ -12,14 +12,15 @@ source:
     - quocmesh.patch 
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make  # [not win]
-    - pkg-config  # [osx]
+    - pkg-config
   host:
     - libblas
     - liblapack
