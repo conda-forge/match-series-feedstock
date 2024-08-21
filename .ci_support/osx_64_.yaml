@@ -1,5 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
-- '10.9'
+- '10.13'
+MACOSX_SDK_VERSION:
+- '10.13'
 bzip2:
 - '1'
 channel_sources:
@@ -9,7 +11,7 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '16'
+- '17'
 fftw:
 - '3'
 libblas:
@@ -23,8 +25,8 @@ libtiff:
 macos_machine:
 - x86_64-apple-darwin13.4.0
 suitesparse:
-- '5'
+- '7'
 target_platform:
 - osx-64
 zlib:
-- '1.2'
+- '1'

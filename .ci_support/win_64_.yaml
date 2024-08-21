@@ -3,7 +3,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2022
+- vs2019
 fftw:
 - '3'
 libblas:
@@ -17,8 +17,8 @@ libtiff:
 metis:
 - 5.1.0
 suitesparse:
-- '5'
+- '7'
 target_platform:
 - win-64
 zlib:
-- '1.2'
+- '1'
