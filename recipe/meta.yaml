@@ -20,7 +20,7 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - make  # [not win]
-    - pkg-config  # [osx]
+    - pkg-config
   host:
     - libblas
     - liblapack
