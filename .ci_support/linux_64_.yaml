@@ -30,5 +30,8 @@ suitesparse:
 - '5'
 target_platform:
 - linux-64
+zip_keys:
+- - c_stdlib_version
+  - cdt_name
 zlib:
 - '1'
