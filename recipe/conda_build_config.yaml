@@ -1,2 +1,4 @@
+zlib:
+  - 1
 cxx_compiler:  # [win]
 - vs2022       # [win]
