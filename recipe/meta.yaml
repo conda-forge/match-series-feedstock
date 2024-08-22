@@ -27,7 +27,7 @@ requirements:
     - fftw
     - libpng
     - zlib
-    - bzip2  # [not win]
+    - bzip2
     - libtiff
     - suitesparse
     - metis  # [win]

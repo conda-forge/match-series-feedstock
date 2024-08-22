@@ -1,3 +1,5 @@
+bzip2:
+- '1'
 c_stdlib:
 - vs
 channel_sources:
@@ -23,4 +25,4 @@ suitesparse:
 target_platform:
 - win-64
 zlib:
-- '1.2'
+- '1'
