@@ -12,11 +12,12 @@ source:
     - quocmesh.patch 
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - cmake
     - make  # [not win]
     - pkg-config  # [osx]
@@ -26,7 +27,7 @@ requirements:
     - fftw
     - libpng
     - zlib
-    - bzip2  # [not win]
+    - bzip2
     - libtiff
     - suitesparse
     - metis  # [win]
