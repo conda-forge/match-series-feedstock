@@ -1,0 +1,70 @@
+schema_version: 1
+
+context:
+  name: match-series
+  version: "1.0.4"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/berkels/${{ name }}/archive/v${{ version }}.tar.gz
+  sha256: ae2c867cc721e0dccc0be2e57d03251f26a084ea522eb456efe39994dee0f0ad
+  patches:
+    - quocmesh.patch
+
+build:
+  number: 5
+
+requirements:
+  build:
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - cmake
+    - if: not win
+      then: make
+    - if: osx
+      then: pkg-config
+  host:
+    - libblas
+    - liblapack
+    - fftw
+    - libpng
+    - zlib
+    - bzip2
+    - libtiff
+    - suitesparse
+    - if: win
+      then: metis
+  run:
+    - libpng
+
+tests:
+  - files:
+      recipe:
+        - matchSeries.par
+        - testImg_0_STEM.tif
+        - testImg_1_STEM.tif
+        - testImg_2_STEM.tif
+        - testImg_3_STEM.tif
+    script:
+      - if: win
+        then: set QUOC_NO_SYSTEM_PAUSE=ON
+      - matchSeries
+
+about:
+  license: CDDL-1.0
+  license_file: LICENSE.txt
+  summary: Joint non-rigid registration and reconstruction of image series
+  description: |
+    Joint non-rigid registration and reconstruction of image series
+  homepage: https://github.com/berkels/match-series
+  repository: https://github.com/berkels/match-series
+  documentation: https://github.com/berkels/match-series
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - din14970
+    - berkels
